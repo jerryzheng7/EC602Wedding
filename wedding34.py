@@ -3,13 +3,13 @@ from itertools import product
 
 
 class Wedding:
-    """Class for generating and managing arrangements of wedding guests."""
+    """Initialize the Wedding class"""
 
     def __init__(self):
         self.results = []
 
     def arrangements(self, guests):
-        """Generate all possible arrangements of a list of guests."""
+        """Define a function to generate all possible arrangements of a list of guests"""
         if len(guests) == 1:
             return guests
 
@@ -27,7 +27,7 @@ class Wedding:
         return results
 
     def shuffle_procedure(self, guests):
-        """Shuffle a list of guests and produce unique arrangements."""
+        """Define a function to shuffle a list of guests."""
         results = []
 
         if len(guests) == 2:
@@ -50,11 +50,11 @@ class Wedding:
         return results
 
     def generate(self, results):
-        """Generate all possible combinations for a list of results."""
+        """Define a function to generate all possible arrangements of a list of guests."""
         return list(product(*results))
 
     def barriers_procedure(self, guests, bars):
-        """Generate all possible arrangements of guests with barriers."""
+        """Define a function to generate all possible arrangements of guests with barriers."""
         barriers_result = []
         arrange_list = []
         temp = 0
@@ -102,13 +102,13 @@ class Wedding:
         return result
 
     def barriers(self, guests, bars):
-        """Return arrangements of guests with specified barriers."""
+        """Return barriers for guest."""
         result = self.barriers_procedure(guests, bars)
         return result
 
 
 def show_result(v, partial=False, ind=None):
-    """Display result with an optional index selection for partial output."""
+    """Display the results"""
     v.sort()
     if not partial:
         print(len(v), "\n".join(v), sep="\n")
@@ -117,7 +117,7 @@ def show_result(v, partial=False, ind=None):
 
 
 def standard_tests():
-    """Run a series of standard tests for the Wedding class methods."""
+    """Tests for Wedding Command"""
     standard = Wedding()
     res = standard.shuffle("abc")
     show_result(res)
@@ -147,7 +147,7 @@ def standard_tests():
 
 
 def main():
-    """Main interactive loop for user commands."""
+    """Main for user commands."""
     print(
         """Type quit to exit.
 Commands:
